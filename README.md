@@ -54,7 +54,7 @@ You will have the following directory tree:<br>
 .
 ├─asset
 └─projects
-    └─Acute-Promyelocytic-Leukemia
+    └─APL
         ├─eval
         ├─evaluation
         ├─inference        
@@ -115,9 +115,7 @@ The destribution of images in those dataset is the following;<br>
         │      └─APL
         └─test
 </pre>
-
 <br>
-
 
 1 Sample images of AML_APL_Images/train/AML:<br>
 <img src="./asset/sample_train_images_AML.png" width="840" height="auto">
@@ -126,10 +124,7 @@ The destribution of images in those dataset is the following;<br>
 2 Sample images of AML_APLImages/train/APL:<br>
 <img src="./asset/sample_train_images_APL.png" width="840" height="auto">
 <br> 
-
 <br>
-
-
 <h3>
 <a id="#1.3">1.3 Install Python packages</a>
 </h3>
@@ -175,7 +170,7 @@ We have defined the following python classes to implement our LymphomaClassifica
 <h2>
 <a id="3">3 Pretrained model</a>
 </h2>
- We have used pretrained <b>efficientnetv2-m</b> to train AML model.
+ We have used pretrained <b>efficientnetv2-m</b> to train out APL model.
 Please download the pretrained checkpoint file 
 from <a href="https://storage.googleapis.com/cloud-tpu-checkpoints/efficientnet/v2/efficientnetv2-m.tgz">efficientnetv2-m.tgz</a>, expand it, and place the model under our top repository.
 
@@ -184,7 +179,7 @@ from <a href="https://storage.googleapis.com/cloud-tpu-checkpoints/efficientnet/
 ├─asset
 ├─efficientnetv2-m
 └─projects
-    └─APM
+    └─APL
  ...
 </pre>
 
@@ -195,8 +190,8 @@ from <a href="https://storage.googleapis.com/cloud-tpu-checkpoints/efficientnet/
 <h3>
 <a id="4.1">4.1 Train script</a>
 </h3>
-Please run the following bat file to train our APM efficientnetv2 model by using
-<b>AML-APLimages/train</b>.
+Please run the following bat file to train our APL efficientnetv2 model by using
+<b>AML-APL-Images/train</b>.
 <pre>
 ./1_train.bat
 </pre>
