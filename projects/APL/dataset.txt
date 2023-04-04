@@ -1,0 +1,13 @@
+The AML image dataset used here has been taken from the following web site;
+
+https://springernature.figshare.com/articles/dataset/Data_record_for_the_article_Deep_learning_for_diagnosis_of_Acute_Promyelocytic_Leukemia_via_recognition_of_genomically_imprinted_morphologic_features/14294675?file=27233798
+
+Sidhom, John-William; Siddarthan, Ingharan J.; Lai, Bo Shiun; Luo, Adam; Hambley, Bryan; Bynum, Jennifer; et al. (2021):
+ Data record for the article: Deep learning for diagnosis of Acute Promyelocytic Leukemia via recognition of genomically 
+ imprinted morphologic features. figshare. Dataset.
+https://doi.org/10.6084/m9.figshare.14294675.v1
+
+Please download the following files:
+blood smear images_Patient00-105.zip
+Images_metadata_table.csv
+
