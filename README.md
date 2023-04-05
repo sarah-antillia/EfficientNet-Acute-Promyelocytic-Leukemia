@@ -1,4 +1,4 @@
-<h2>EfficientNet-Acute-Promyelocytic-Leukemia (Updated: 2023/04/04)</h2>
+<h2>EfficientNet-Acute-Promyelocytic-Leukemia (Updated: 2023/04/05)</h2>
 <a href="#1">1 EfficientNetV2 Acute-Promyelocytic-Leukemia Classification </a><br>
 <a href="#1.1">1.1 Clone repository</a><br>
 <a href="#1.2">1.2 Prepare Peripheral Blood Cell dataset</a><br>
@@ -40,6 +40,10 @@ Please download the following files:
  blood smear images_Patient00-105.zip
  Images_metadata_table.csv
 </pre>
+<li>
+2023/04/05 Updated 1_train.bat and data_generator.confit to supress the excessive fluctuations of val_accuracy and val_loss.
+</li>
+
 <br>
 <br>We use python 3.8 and tensorflow 2.8.0 environment on Windows 11.<br>
 <h3>
@@ -212,7 +216,7 @@ python ../../EfficientNetV2ModelTrainer.py ^
   --monitor=val_loss ^
   --learning_rate=0.0001 ^
   --trainable_layers_ratio=0.4 ^
-  --dropout_rate=0.4 ^
+  --dropout_rate=0.2 ^
   --num_epochs=100 ^
   --batch_size=4 ^
   --patience=10 ^
@@ -229,13 +233,13 @@ samplewise_center  = False
 featurewise_std_normalization=False
 samplewise_std_normalization =False
 zca_whitening                =False
-rotation_range     = 90
+rotation_range     = 10
 horizontal_flip    = True
 vertical_flip      = True
-width_shift_range  = 0.05
-height_shift_range = 0.05
+width_shift_range  = 0.1
+height_shift_range = 0.1
 shear_range        = 0.00
-zoom_range         = [0.5, 2.0]
+zoom_range         = [0.2, 1.4]
 
 channel_shift_range= 10
 brightness_range   = [80,100]
@@ -251,7 +255,7 @@ Furthermore, it will generate a <a href="./projects/APL/eval/train_accuracies.cs
 and <a href="./projects/APL/eval/train_losses.csv">train_losses</a> files
 <br>
 Training console output:<br>
-<img src="./asset/train_at_epoch_23_0404.png" width="740" height="auto"><br>
+<img src="./asset/train_at_epoch_17_0405.png" width="740" height="auto"><br>
 <br>
 Train_accuracies:<br>
 <img src="./projects/APL/eval/train_accuracies.png" width="640" height="auto"><br>
@@ -278,7 +282,7 @@ python ../../EfficientNetV2Inferencer.py ^
   --model_dir=./models ^
   --fine_tuning=True ^
   --trainable_layers_ratio=0.4 ^
-  --dropout_rate=0.4 ^
+  --dropout_rate=0.2 ^
   --image_path=./test/*.jpg ^
   --eval_image_size=360 ^
   --label_map=./label_map.txt ^
@@ -313,11 +317,11 @@ More experiments will be needed to improve accuracy.<br>
 
 <br>
 Inference console output:<br>
-<img src="./asset/inference_at_epoch_23_0404.png" width="740" height="auto"><br>
+<img src="./asset/inference_at_epoch_17_0405.png" width="740" height="auto"><br>
 <br>
 
 Inference result (<a href="./projects/APL/inference/inference.csv">inference.csv</a>):<br>
-<img src="./asset/inference_at_epoch_23_0404_csv.png" width="640" height="auto"><br>
+<img src="./asset/inference_at_epoch_17_0405_csv.png" width="640" height="auto"><br>
 <br>
 <h2>
 <a id="6">6 Evaluation</a>
@@ -339,7 +343,7 @@ python ../../EfficientNetV2Evaluator.py ^
   --evaluation_dir=./evaluation ^
   --fine_tuning=True ^
   --trainable_layers_ratio=0.4 ^
-  --dropout_rate=0.4 ^
+  --dropout_rate=0.2 ^
   --eval_image_size=360 ^
   --mixed_precision=True ^
   --debug=False 
@@ -355,12 +359,12 @@ This evaluation command will generate <a href="./projects/APL/evaluation/classif
 <br>
 <br>
 Evaluation console output:<br>
-<img src="./asset/evaluate_at_epoch_23_0404.png" width="740" height="auto"><br>
+<img src="./asset/evaluate_at_epoch_17_0405.png" width="740" height="auto"><br>
 <br>
 
 <br>
 Classification report:<br>
-<img src="./asset/classification_report_at_epoch_23_0404.png" width="740" height="auto"><br>
+<img src="./asset/classification_report_at_epoch_17_0405.png" width="740" height="auto"><br>
 <br>
 Confusion matrix:<br>
 <img src="./projects/APL/evaluation/confusion_matrix.png" width="740" height="auto"><br>
