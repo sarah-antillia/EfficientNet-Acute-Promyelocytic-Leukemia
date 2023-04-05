@@ -41,7 +41,7 @@ Please download the following files:
  Images_metadata_table.csv
 </pre>
 <li>
-2023/04/05 Updated 1_train.bat and data_generator.confit to supress the excessive fluctuations of val_accuracy and val_loss.
+2023/04/05 Updated 1_train.bat and data_generator.config to supress the excessive fluctuations of val_accuracy and val_loss.
 </li>
 
 <br>
